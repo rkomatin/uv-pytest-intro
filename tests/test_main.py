@@ -30,3 +30,26 @@ def test_is_even_with_float():
 def test_is_even_with_string():
     with pytest.raises(TypeError):
         is_even("4")
+
+
+def test_is_even_with_none():
+    with pytest.raises(TypeError):
+        is_even(None)
+
+
+def test_is_even_with_true():
+    with pytest.raises(TypeError):
+        is_even(True)
+
+
+def test_is_even_with_false():
+    with pytest.raises(TypeError):
+        is_even(False)
+
+
+def test_is_even_with_large_even():
+    assert is_even(10**18) is True
+
+
+def test_is_even_with_large_odd():
+    assert is_even(10**18 + 1) is False
