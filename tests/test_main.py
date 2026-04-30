@@ -20,3 +20,13 @@ def test_is_even_with_negative_even():
 
 def test_is_even_with_negative_odd():
     assert is_even(-7) is False
+
+
+def test_is_even_with_float():
+    with pytest.raises(TypeError):
+        is_even(1.5)
+
+
+def test_is_even_with_string():
+    with pytest.raises(TypeError):
+        is_even("4")
